@@ -1,0 +1,12 @@
+{
+  "name": "edar-cli",
+  "version": "1.0.0",
+  "description": "A scaffolding to help quickly build web projects and specifications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["cli","web","vite","webpack","rollup"],
+  "author": "An-Lijun",
+  "license": "ISC"
+}
