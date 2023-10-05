@@ -1,0 +1,89 @@
+{
+  "name": "<% props.projectNm -%>",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    <% if (props.helpFun.includes('tsDoc')) {-%>
+      "doc": "api-extractor run --local --verbose && api-documenter markdown -i temp -o etc/doc",
+      "doc:debug": "api-extractor run --local --verbose --diagnostics && api-documenter markdown -i temp -o etc/doc",
+    <% } -%>
+    <% if (props.helpFun.includes('dts')) {-%>
+      "trace": "tsc dist/types/index.d.ts --traceResolution > trace.log",
+    <% } -%>
+    <% if (props.helpFun.includes('vitepress')) {-%>
+      "docs:dev": "vitepress dev",
+      "docs:build": "vitepress build",
+      "docs:preview": "vitepress preview",
+    <% } -%>
+    <% if (props.funcs.includes('gitHusky')) {-%>
+      "commit": "cz",
+      "prepare": "husky install",
+    <% } -%>
+    <% if (props.helpFun.includes('Jest')) {-%>
+      "test": "jest",
+    <% } -%>
+    <% if (props.funcs.includes('esLint')) {-%>
+      "lint": "eslint --fix --ext .js,.vue src",
+    <% } -%>
+    "build": "npx rollup -c"
+  },
+  "author": "",
+  "license": "ISC",
+  <% if (props.funcs.includes('gitHusky')) {-%>
+    "config": {
+      "commitizen": {
+        "path": "./node_modules/cz-conventional-changelog"
+      }
+    },
+  <% } -%>
+  "devDependencies": {
+    "fast-glob": "^3.3.1",
+    <% if (props.addition.includes('babel')) {-%>
+      "@babel/core": "^7.22.20",
+      "@babel/preset-env": "^7.22.20",
+      "@rollup/plugin-babel": "^6.0.3",
+      <% if (props.language==='TypeScript') {-%>
+        "@babel/preset-typescript": "^7.22.15",
+      <% } -%>
+    <% } -%>
+    <% if (props.helpFun.includes('tsDoc')) {-%>
+      "@microsoft/api-documenter": "^7.23.2",
+      "@microsoft/api-extractor": "^7.37.0",
+    <% } -%>
+    <% if (props.helpFun.includes('alias')) {-%>
+      "@rollup/plugin-alias": "^5.0.0",
+    <% } -%>
+    <% if (props.addition.includes('terser')) {-%>
+      "@rollup/plugin-terser": "^0.4.3",
+    <% } -%>
+    <% if (props.language==='TypeScript') {-%>
+      "@types/node": "^20.6.4",
+      "rollup-plugin-dts": "^6.0.2",
+      "rollup-plugin-typescript2": "^0.35.0",
+      "ts-node": "^10.9.1",
+      "typescript": "^5.2.2",
+    <% } -%>
+    <% if (props.funcs.includes('esLint')) {-%>
+      "eslint": "^8.50.0",
+      <% if (props.language==='TypeScript') {-%>
+        "@typescript-eslint/parser": "^6.7.4",
+        "@typescript-eslint/eslint-plugin": "^6.7.4",
+      <% } -%>
+    <% } -%>
+    <% if (props.funcs.includes('gitHusky')) {-%>
+      "husky": "^8.0.0",
+      "commitizen": "^4.3.0",
+      "cz-conventional-changelog": "^3.3.0",
+    <% } -%>
+    <% if (props.helpFun.includes('Jest')) {-%>
+      "jest": "^29.7.0",
+      "jest-environment-jsdom": "^29.7.0",
+    <% } -%>
+    <% if (props.helpFun.includes('vitepress')) {-%>
+      "vitepress": "1.0.0-rc.20",
+      "vue": "^3.3.4",
+    <% } -%>
+    "rollup": "^3.29.2"
+  },
+}

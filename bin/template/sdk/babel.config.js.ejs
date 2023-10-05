@@ -1,0 +1,8 @@
+module.exports = {
+  "presets": [
+    "@babel/preset-env",
+    <% if (props.language==='TypeScript') {-%>
+      "@babel/preset-typescript"
+    <% } -%>
+  ],
+}
