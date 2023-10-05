@@ -1,13 +1,13 @@
 {
   "name": "edar-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A scaffolding to help quickly build web projects and specifications",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "edar": "./src/index.js"
+    "edar": "./bin/index.js"
   },
   "keywords": [
     "cli",

@@ -4,14 +4,6 @@ const writeFile = require('../../utils/write-file')
 const fs = require('fs');
 const ora = require('ora')
 const loading = ora('正在初始化...')
-// {
-//     projectNm: 'dd',
-//     type: 'sdk',
-//     language: 'TypeScript',
-//     funcs: [ 'esLint', 'gitHusky' ],
-//     helpFun: [ 'alias', 'dts', 'tsDoc', 'vitepress', 'Jest' ],
-//     addition: [ 'babel', 'terser' ]
-//   }
 
 async function createSdk(data){
     loading.start()
