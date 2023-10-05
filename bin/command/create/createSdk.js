@@ -94,7 +94,7 @@ async function createSdk(data){
         writeFile('./.husky/pre-commit',commitTmp)
         fs.mkdirSync('./.husky/_')
         let _gitignoreTmp = await compileEjs('_gitignoreTmp.ejs', data)
-        writeFile('./.husky/_',_gitignoreTmp)
+        writeFile('./.husky/_/.gitignore',_gitignoreTmp)
     }
     loading.succeed('初始化成功')
 }

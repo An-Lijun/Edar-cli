@@ -24,6 +24,7 @@
     "inquirer": "^8.2.5"
   },
   "devDependencies": {
+    "beautify": "^0.0.8",
     "ora": "5"
   }
 }
