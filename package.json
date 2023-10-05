@@ -1,6 +1,6 @@
 {
   "name": "edar-cli",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A scaffolding to help quickly build web projects and specifications",
   "main": "index.js",
   "scripts": {
@@ -21,10 +21,11 @@
   "dependencies": {
     "commander": "^11.0.0",
     "ejs": "^3.1.9",
-    "inquirer": "^8.2.5"
-  },
-  "devDependencies": {
+    "inquirer": "^8.2.5",
     "beautify": "^0.0.8",
     "ora": "5"
+  },
+  "devDependencies": {
+    
   }
 }
