@@ -2,7 +2,8 @@ const beautify = require('beautify')
 const { compileEjs } = require('../../utils/compile-ejs')
 const writeFile = require('../../utils/write-file')
 const fs = require('fs');
-
+const ora = require('ora')
+const loading = ora('正在初始化...')
 // {
 //     projectNm: 'dd',
 //     type: 'sdk',
@@ -13,7 +14,7 @@ const fs = require('fs');
 //   }
 
 async function createSdk(data){
-    
+    loading.start()
     // 创建package.json
     let packageTmp = await compileEjs('package.json.ejs', data)
     writeFile('./package.json',beautify(packageTmp,{format:'json'}))
@@ -95,5 +96,6 @@ async function createSdk(data){
         let _gitignoreTmp = await compileEjs('_gitignoreTmp.ejs', data)
         writeFile('./.husky/_',_gitignoreTmp)
     }
+    loading.succeed('初始化成功')
 }
 module.exports = createSdk
