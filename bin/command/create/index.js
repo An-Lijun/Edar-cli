@@ -7,6 +7,7 @@ program
   .description('create a project into a folder')
   .action(async function () {
     let data = await getAnswer()
+    console.log(data);
     // 创建package.json
     switch (data.type) {
       case 'sdk':
