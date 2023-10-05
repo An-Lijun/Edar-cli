@@ -88,6 +88,8 @@ async function createSdk(data){
         let _gitignoreTmp = await compileEjs('_gitignoreTmp.ejs', data)
         writeFile('./.husky/_/.gitignore',_gitignoreTmp)
     }
+    fs.mkdirSync('./src')
     loading.succeed('初始化成功')
+    console.log('please run npm i !');
 }
 module.exports = createSdk
