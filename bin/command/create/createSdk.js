@@ -57,13 +57,13 @@ async function createSdk(data){
     //创建eslintrc.js
     if(data.funcs.includes('esLint')){
         let eslintrcTmp = await compileEjs('.eslintrc.js.ejs', data)
-        writeFile('./.eslintrc',beautify(eslintrcTmp,{format:'js'}))
+        writeFile('./.eslintrc.js',beautify(eslintrcTmp,{format:'js'}))
     }
 
     // 创建eslintignore
     if(data.funcs.includes('esLint')){
         let eslintrcTmp = await compileEjs('.eslintignore.ejs', data)
-        writeFile('./.eslintignore',beautify(eslintrcTmp,{format:'js'}))
+        writeFile('./.eslintignore',eslintrcTmp)
     }
 
     // 创建文件夹etc
