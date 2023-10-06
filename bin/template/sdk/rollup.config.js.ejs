@@ -51,9 +51,6 @@ module.exports=defineConfig([{
         exclude: 'node_modules/**',
         "presets": [
           "@babel/preset-env",
-          <% if (props.language==='TypeScript') {-%>
-            "@babel/preset-typescript"
-          <% } -%>
         ],
       }),
     <% } -%>
