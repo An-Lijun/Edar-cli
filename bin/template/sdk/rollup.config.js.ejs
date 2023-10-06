@@ -18,7 +18,7 @@ const path =require('path')
 
 // 由于暂时不写cjs 的nodejs 包所以这里就忽略cjs的模块了
 module.exports=defineConfig([{
-  input:['./src/index.<%props.language==='TypeScript'?'ts':'js'%>'],//入口文件
+  input:['./src/index.<%-props.language==='TypeScript'?'ts':'js'%>'],//入口文件
   output:[
     {
       dir:'dist/esm',//出口文件
