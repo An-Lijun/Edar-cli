@@ -1,6 +1,6 @@
 {
   "name": "edar-cli",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A scaffolding to help quickly build web projects and specifications",
   "main": "index.js",
   "scripts": {
