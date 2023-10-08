@@ -3,7 +3,7 @@ const ejs = require('ejs')
 
 function compileEjs(templateNm, props = {}) {
   return new Promise((resolve, reject) => {
-    const tempPath = `../template/sdk/${templateNm}`
+    const tempPath = `../template/${templateNm}`
     const absolutePath = path.resolve(__dirname, tempPath)
     ejs.renderFile(absolutePath, {props}, (err, result) => {
       if (err) {
